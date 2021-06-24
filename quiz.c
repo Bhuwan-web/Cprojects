@@ -21,16 +21,16 @@ int main(){
     fflush(stdin);
     int points=0;
     char questions[][100]=
-    {"1.What is my name?",                              //q1
-    "2.How old i am?",                                  //q2
-    "3.Where do I live?"};                              //q3
+    {"Q)Who is current CEO of Microsoft?",                              //q1
+    "Q)What is value of mass of electron?",                                  //q2
+    "Q)Who Propounded Schrodinger equation?"};                              //q3
     char options[][3][50]=  //💀💀💀⚡⚡If you have 4 options on each question change 3 to 4 and so on
     {
-        {"1.Bhuwan Panta","2.Sachin Panta","3.Sagar Panta"},//q1
-        {"1. 17","2. 19","3. 20"},                          //q2
-        {"1.Sunwal","2.Butwal","3.Kathmandu"}               //q3
+        {"1)Sundar Pichai","2)Bill gates","3)Satya Nadella"},//q1
+        {"1)9.1×10^-23Kg","2)9.1×10^-27Kg","3)9.1×10^-31Kg"},                          //q2
+        {"1)Henry Schrodinger","2)Erwin Schrodinger","3)Charles Schrodinger"}               //q3
     };
-    int answers[]={1,3,1};
+    int answers[]={3,3,2};
     for(int qnsNo=0;qnsNo<noOfQuestions;qnsNo++){
         int userAns=0;
         printf("%s\n",questions[qnsNo]);
@@ -52,6 +52,6 @@ int main(){
         }
         printf("\n\n");
     }
-    printf("Congratulations %s,You scored %d points",userName,points);
+    printf("Congratulations %s !!,You scored %d points",userName,points);
     getch();
 }
