@@ -14,6 +14,7 @@ int main(){
     char userName[25];
     printf("Enter your name: ");
     scanf("%[^\n]s",&userName);
+    game:
     printf("\n\n \
         \tWelcome %s\n\n \
         \tLet's start the quiz\n \
@@ -41,17 +42,25 @@ int main(){
         scanf("%d",&userAns);
         printf("\n\t");
         if(userAns==answers[qnsNo]){
-            printf("Correct Answer!!😀");
+            printf("Correct Answer!! :)");
             points+=10;
         }
         else if(userAns<1 || userAns>noOfOptions){
             printf("Those are not the availble options");
         }
         else{
-            printf("Wrong Answer!!");
+            printf("Wrong Answer!! :(");
         }
-        printf("\n\n");
+        printf("\n........................................................\n\n");
     }
-    printf("Congratulations %s !!,You scored %d points",userName,points);
-    getch();
+    printf("Congratulations %s !!,You scored %d points\n\n",userName,points);
+    printf(
+"1.Replay\n\
+2.Quit\n\
+Choose:/>");
+    int replay;
+    scanf("%d",&replay);
+    if(replay==1){
+        goto game;
+    }
 }
