@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<ctype.h>
+int singleUserInput();
 void reverseNumber();
 void nTimesMessage();
 void factorial();
@@ -10,17 +11,58 @@ void isPrime();
 
 
 int main(){
-    //reverseNumber();
-    //nTimesMessage();
-    //factorial();
-    //sumToN();
-    // squareToN();
-    isPrime();
+    int questions,choose;
+    printf("Choose question to visit\n\
+    1.Reverse the given number\n\
+    2.Print statement user defined times\n\
+    3.Find the factorial of given number\n\
+    4.Sum to n numbers\n\
+    5.Square to n terms\n\
+    6.Check if user provided number is prime or not.\n\n\
+    Choose a Program number:/>");
+    scanf("%d",&questions);
+    switch(questions){
+        case 1:
+            reverseNumber();
+            break;
+        case 2:
+            nTimesMessage();
+            break;
+        case 3:
+            factorial();
+            break;
+        case 4:
+            sumToN();
+            break;
+        case 5:
+            squareToN();
+            break;
+        case 6:
+            isPrime();
+            break;
+        default:
+            printf("You haven't selected any projects");
+    }
+    printf("\n\n\
+    1.View Project again \n\
+    2.Exit\n\
+    Choose(1-2):/>");
+    scanf("%d",&choose);
+    if(choose==1){
+        printf("\n\n************************************\n\n");
+        main();
+    }
 }
-void reverseNumber(){
+
+int singleUserInput(){
     int num;
     printf("Enter a number :/> ");
     scanf("%d",&num);
+    return num;
+}
+
+void reverseNumber(){
+    int num=singleUserInput();
     while(num!=0){
         int rem=num%10;
         num=num/10;
@@ -28,7 +70,7 @@ void reverseNumber(){
     };
 }
 
-void nTimesMessage(void){
+void nTimesMessage(){
     int repeat;
     printf("Repeat time: ");
     scanf("%d",&repeat);
@@ -39,9 +81,7 @@ void nTimesMessage(void){
 }
 
 void factorial(){
-    int num;
-    printf("Enter a number: ");
-    scanf("%d",&num);
+    int num=singleUserInput();
     printf("Factorials of %d are: ",num); 
     for(int i=1;i<=num;i++){
         if(num%i==0){
@@ -51,17 +91,13 @@ void factorial(){
 }
 
 void sumToN(){
-    int num;
-    printf("Enter a number: ");
-    scanf("%d",&num);
+    int num=singleUserInput();
     int sum=num*(num+1)/2;
     printf("Sum upto %d is %d",num,sum);
 }
 
 void squareToN(){
-    int num/*,sqSum=0*/;
-    printf("Enter a number: ");
-    scanf("%d",&num);
+    int num=singleUserInput();
     int sqsum=num*(num+1)*(2*num+1)/6;
     // for(int i=1;i<=num;i++){
     //     sqSum+=i*i;
@@ -70,9 +106,7 @@ void squareToN(){
 }
 
 void isPrime(){
-    int num;
-    printf("Enter a number: ");
-    scanf("%d",&num);
+    int num=singleUserInput();
     int i;
     for(i=2;i<num;i++){
         if(num%i==0){
