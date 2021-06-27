@@ -1,2 +1,3 @@
-scanf("%d",userAns);
-        // int playerAns=userAns;
+if(i==j){
+        //     printf("%d \t",i);
+        // }  

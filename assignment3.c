@@ -83,11 +83,11 @@ void nTimesMessage(){
 void factorial(){
     int num=singleUserInput();
     printf("Factorials of %d are: ",num); 
+    double fact=1;
     for(int i=1;i<=num;i++){
-        if(num%i==0){
-            printf("%d,",i);
-        }
+        fact=i*fact;
     }
+    printf("The factorial of %d is %lf",num,fact);
 }
 
 void sumToN(){
